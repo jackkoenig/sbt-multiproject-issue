@@ -58,7 +58,7 @@ sbt:root> compile
 
 It looks as if because multiple projecs have a common source dependency, that SBT is somehow losing the information about that project.
 
-Some information from SBT shell that illustrates the problem. All projects should have version `0.1.0`:
+Some information from SBT shell that illustrates the problem. All projects should have version `0.1.0` and `bar` has a `libraryDependency` (see [notes](#notes) below):
 ```
 sbt:root> projects
 [info] In file:/scratch/koenig/sbt-build/not-working/
