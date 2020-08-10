@@ -1,0 +1,12 @@
+diff --git a/.sbtopts b/.sbtopts
+index 933c23c..735ce05 100644
+--- a/.sbtopts
++++ b/.sbtopts
+@@ -1,4 +1,4 @@
+ -Droot.fizz.path=fizz
+--Dfoo.bar.path=../bar
+--Dfizz.foo.path=../foo
+--Dfizz.bar.path=../bar
++-Dfoo.bar.path=bar
++-Dfizz.foo.path=foo
++-Dfizz.bar.path=bar

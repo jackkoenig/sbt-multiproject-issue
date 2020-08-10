@@ -1,0 +1,4 @@
+-Droot.fizz.path=fizz
+-Dfoo.bar.path=../bar
+-Dfizz.foo.path=../foo
+-Dfizz.bar.path=../bar

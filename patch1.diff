@@ -1,0 +1,27 @@
+diff --git a/fizz/build.sbt b/fizz/build.sbt
+index e8f6457..2c8d100 100644
+--- a/fizz/build.sbt
++++ b/fizz/build.sbt
+@@ -7,15 +7,6 @@ lazy val commonSettings = Seq(
+   scalacOptions ++= Seq("-deprecation", "-feature")
+ )
+ 
+-// Optionally depend on bar from source
+-val barDirOpt = sys.props.get("fizz.bar.path")
+-lazy val bar = project in file(barDirOpt.getOrElse(".fake_bar"))
+-
+-def dependOnBar(proj: Project): Project = barDirOpt match {
+-  case None    => proj.settings(libraryDependencies += "com.github.jackkoenig" % "bar" % "1.0.0")
+-  case Some(_) => proj.dependsOn(bar)
+-}
+-
+ // Optionally depend on foo from source
+ val fooDirOpt = sys.props.get("fizz.foo.path")
+ lazy val foo = project in file(fooDirOpt.getOrElse(".fake_foo"))
+@@ -25,5 +16,5 @@ def dependOnFoo(proj: Project): Project = fooDirOpt match {
+   case Some(_) => proj.dependsOn(foo)
+ }
+ 
+-lazy val fizz = dependOnBar(dependOnFoo(project in file(".")))
++lazy val fizz = dependOnFoo(project in file("."))
+   .settings(commonSettings: _*)
